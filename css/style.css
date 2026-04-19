@@ -350,3 +350,19 @@ canvas {
     from { background-position: 200% 0; }
     to { background-position: -200% 0; }
 }
+.sidebar-container {
+    position: fixed; /* ثابت في مكانه */
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    z-index: 1100;
+    background: #050a18;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+/* تأثير خفيف لما تقف بالماوس على اللوجو */
+.sidebar-header a:hover h3 {
+    filter: brightness(1.2);
+    transition: 0.3s;
+}
