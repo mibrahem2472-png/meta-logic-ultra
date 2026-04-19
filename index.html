@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Logic | Ultra Command Center v2.0</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IBM+Plex+Sans+Arabic:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+    
+    <nav id="sidebar" class="scrollbar-hidden">
+        <div class="sidebar-header p-4 text-center">
+            <img src="img/logo.png" alt="Meta Logo" class="img-fluid mb-2 main-logo">
+            <div class="system-id">
+                <span class="pulse-red"></span>
+                <small class="id-text">META-CORE-ID: 0866FF-2026</small>
+            </div>
+        </div>
+        
+        <div class="sidebar-content p-3">
+            <div class="sidebar-group">
+                <p class="group-label">العمليات السيادية</p>
+                <ul class="list-unstyled">
+                    <li class="active"><a href="index.html"><i class="fas fa-microchip"></i> النواة المركزية (Core)</a></li>
+                    <li><a href="pages/war-room.html"><i class="fas fa-user-secret"></i> غرفة الحرب (War Room)</a></li>
+                    <li><a href="#"><i class="fas fa-satellite"></i> تتبع الأقمار الصناعية</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-group">
+                <p class="group-label">تحليل الشبكات الاجتماعية</p>
+                <ul class="list-unstyled">
+                    <li><a href="pages/audience.html"><i class="fab fa-facebook-f"></i> تحليل فيسبوك Deep</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> محرك إنستجرام</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> تدفق واتساب العالمي</a></li>
+                    <li><a href="pages/reels-radar.html"><i class="fas fa-vr-cardboard"></i> رادار الـ Reels & VR</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-group">
+                <p class="group-label">المحرك المالي</p>
+                <ul class="list-unstyled">
+                    <li><a href="pages/financials.html"><i class="fas fa-chart-pie"></i> عوائد الإعلانات (Live)</a></li>
+                    <li><a href="#"><i class="fas fa-coins"></i> ميزانية الأبحاث R&D</a></li>
+                    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> تقارير المستثمرين</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-group">
+                <p class="group-label">الدفاع والذكاء الاصطناعي</p>
+                <ul class="list-unstyled">
+                    <li><a href="pages/security.html"><i class="fas fa-user-shield"></i> جدار الحماية العالمي</a></li>
+                    <li><a href="pages/ai-lab.html"><i class="fas fa-brain"></i> مصفوفة Llama 4 AI</a></li>
+                    <li><a href="#"><i class="fas fa-atom"></i> الحوسبة الكمومية</a></li>
+                    <li><a href="pages/system-logs.html"><i class="fas fa-terminal"></i> سجلات الأكواد الخام</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-extra p-3">
+            <div class="status-box rounded p-2 mb-2">
+                <div class="d-flex justify-content-between"><small>Server Load</small><small>42%</small></div>
+                <div class="progress mt-1" style="height: 3px;"><div class="progress-bar bg-info" style="width: 42%"></div></div>
+            </div>
+            <div class="status-box rounded p-2">
+                <div class="d-flex justify-content-between"><small>AI Integrity</small><small>98%</small></div>
+                <div class="progress mt-1" style="height: 3px;"><div class="progress-bar bg-primary" style="width: 98%"></div></div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content" class="w-100">
+        
+        <header class="top-header d-flex justify-content-between align-items-center px-4 py-3 shadow-sm">
+            <div class="header-left d-flex align-items-center">
+                <div id="menu-toggle" class="me-3"><i class="fas fa-bars-staggered fs-4"></i></div>
+                <h4 class="mb-0 fw-800">DASHBOARD <span class="text-primary">ULTRA</span></h4>
+            </div>
+            
+            <div class="header-center d-none d-xl-block">
+                <div class="search-box position-relative">
+                    <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input type="text" class="form-control rounded-pill ps-5" placeholder="ابحث في مصفوفة البيانات...">
+                </div>
+            </div>
+
+            <div class="header-right d-flex align-items-center">
+                <div class="system-time text-end me-4">
+                    <small class="d-block text-muted">GMT TIME</small>
+                    <span id="gmt-clock" class="fw-bold">--:--:--</span>
+                </div>
+                <div class="action-icons d-flex gap-3">
+                    <div class="icon-circle shadow-sm"><i class="fas fa-bell"></i><span class="notif-count">12</span></div>
+                    <div class="icon-circle shadow-sm"><i class="fas fa-envelope"></i></div>
+                    <div class="icon-circle shadow-sm" id="dark-toggle"><i class="fas fa-moon"></i></div>
+                </div>
+                <div class="profile-area ms-4 d-flex align-items-center bg-light p-1 rounded-pill">
+                    <img src="https://ui-avatars.com/api/?name=Don+Richards&background=0866FF&color=fff" class="rounded-circle" width="35">
+                    <span class="mx-2 fw-bold d-none d-md-block">Don Richards</span>
+                    <i class="fas fa-chevron-down me-2 d-none d-md-block"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-4">
+            
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-sm-6">
+                    <div class="glass-card stat-card p-4 overflow-hidden position-relative">
+                        <div class="z-index-1 position-relative">
+                            <p class="text-muted text-uppercase mb-1 small fw-bold">Active Humans</p>
+                            <h2 class="fw-800 mb-0" id="user-counter">3,071,452,100</h2>
+                            <small class="text-success"><i class="fas fa-caret-up"></i> +45k Last Hour</small>
+                        </div>
+                        <i class="fas fa-users card-bg-icon"></i>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="glass-card stat-card p-4 overflow-hidden position-relative border-start border-success border-5">
+                        <div class="z-index-1 position-relative">
+                            <p class="text-muted text-uppercase mb-1 small fw-bold">Revenue Pulse</p>
+                            <h2 class="fw-800 mb-0">$<span id="money-counter">39,120</span>M</h2>
+                            <small class="text-primary">Expected: $42B</small>
+                        </div>
+                        <i class="fas fa-sack-dollar card-bg-icon text-success"></i>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="glass-card stat-card p-4 overflow-hidden position-relative">
+                        <div class="z-index-1 position-relative">
+                            <p class="text-muted text-uppercase mb-1 small fw-bold">Llama 4 Tokens/s</p>
+                            <h2 class="fw-800 mb-0">8.2T</h2>
+                            <small class="text-info">Processing Global Language</small>
+                        </div>
+                        <i class="fas fa-brain card-bg-icon text-info"></i>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="glass-card stat-card p-4 overflow-hidden position-relative border-start border-danger border-5">
+                        <div class="z-index-1 position-relative">
+                            <p class="text-muted text-uppercase mb-1 small fw-bold">Cyber Threats Blocked</p>
+                            <h2 class="fw-800 mb-0">1.4M</h2>
+                            <small class="text-danger">Live Attacks Neutralized</small>
+                        </div>
+                        <i class="fas fa-shield-virus card-bg-icon text-danger"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-xl-8">
+                    <div class="glass-card map-card p-4 border-0">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="fw-bold mb-0"><i class="fas fa-map-marked-alt text-primary me-2"></i> خريطة الترافيك العالمية (Hyper-Map)</h4>
+                            <div class="map-controls d-flex gap-2">
+                                <button class="btn btn-sm btn-dark">2D</button>
+                                <button class="btn btn-sm btn-outline-primary">3D Satellite</button>
+                                <button class="btn btn-sm btn-outline-danger">Heatmap</button>
+                            </div>
+                        </div>
+                        <div id="vmap" class="map-placeholder d-flex align-items-center justify-content-center">
+                            <div class="loader-content text-center text-white">
+                                <div class="spinner-grow text-primary mb-3"></div>
+                                <h5>CONNECTING TO DATA CENTERS...</h5>
+                                <p class="small opacity-50">Ping: 12ms | Nodes: 4500+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-4">
+                    <div class="glass-card p-4 h-100">
+                        <h5 class="fw-bold mb-4 border-bottom pb-2">التدفق اللحظي للبيانات</h5>
+                        <div class="transaction-feed scrollbar-hidden" style="max-height: 400px; overflow-y: auto;">
+                            <div class="log-entry d-flex align-items-center mb-3 p-2 rounded">
+                                <div class="log-icon bg-success-light text-success me-3"><i class="fas fa-plus"></i></div>
+                                <div>
+                                    <small class="d-block text-muted">User Join | CA, USA</small>
+                                    <p class="mb-0 fw-bold">New Instagram Account Verified</p>
+                                </div>
+                            </div>
+                            <div class="log-entry d-flex align-items-center mb-3 p-2 rounded border-start border-primary border-3">
+                                <div class="log-icon bg-primary-light text-primary me-3"><i class="fas fa-ad"></i></div>
+                                <div>
+                                    <small class="d-block text-muted">Ad Engine | Berlin, DE</small>
+                                    <p class="mb-0 fw-bold">Campaign "Spring-26" Approved</p>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="glass-card p-4">
+                        <h5 class="fw-bold mb-3">توزيع المنصات (User Split)</h5>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="platformPieChart"></canvas>
+                        </div>
+                        <div class="platform-stats mt-3">
+                            <div class="d-flex justify-content-between mb-2"><span>Facebook</span><b>62%</b></div>
+                            <div class="progress mb-3" style="height: 5px;"><div class="progress-bar" style="width: 62%"></div></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Instagram</span><b>28%</b></div>
+                            <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 28%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="glass-card p-4">
+                        <h5 class="fw-bold mb-3">كفاءة محرك الـ AI</h5>
+                        <div class="ai-status text-center p-4">
+                            <div class="cpu-usage position-relative d-inline-block">
+                                <svg width="150" height="150">
+                                    <circle cx="75" cy="75" r="70" fill="none" stroke="#e2e8f0" stroke-width="10" />
+                                    <circle cx="75" cy="75" r="70" fill="none" stroke="#0866FF" stroke-width="10" stroke-dasharray="300" />
+                                </svg>
+                                <div class="cpu-text position-absolute top-50 start-50 translate-middle">
+                                    <h3 class="mb-0">84%</h3>
+                                    <small>Load</small>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center small text-muted mt-2">Llama v4.2 is optimizing global feeds in 140+ languages.</p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-12">
+                    <div class="glass-card p-4">
+                        <h5 class="fw-bold mb-3">الأجهزة النشطة حالياً</h5>
+                        <div class="table-responsive">
+                            <table class="table table-borderless align-middle">
+                                <thead class="text-muted small">
+                                    <tr><th>الجهاز</th><th>الحالة</th><th>الحمل</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="fab fa-apple me-2"></i> iOS Apps</td>
+                                        <td><span class="badge bg-success">Optimal</span></td>
+                                        <td><div class="progress w-100" style="height: 4px;"><div class="progress-bar" style="width: 70%"></div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fab fa-android me-2 text-success"></i> Android OS</td>
+                                        <td><span class="badge bg-success">Optimal</span></td>
+                                        <td><div class="progress w-100" style="height: 4px;"><div class="progress-bar bg-success" style="width: 85%"></div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-vr-cardboard me-2"></i> Meta Quest</td>
+                                        <td><span class="badge bg-warning text-dark">High Load</span></td>
+                                        <td><div class="progress w-100" style="height: 4px;"><div class="progress-bar bg-warning" style="width: 92%"></div></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="script/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>

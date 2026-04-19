@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Reels Radar | Meta Content</title>
+</head>
+<body class="bg-radar-theme">
+    <div class="d-flex" id="wrapper">
+        <div id="content" class="w-100">
+            <main class="p-4">
+                <h2 class="fw-800 mb-4 text-danger"><i class="fas fa-play-circle"></i> رادار المحتوى الرائج (Viral Radar)</h2>
+                
+                <div class="row g-4">
+                    <div class="col-xl-8">
+                        <div class="glass-card p-0 overflow-hidden" style="height: 500px; position: relative;">
+                            <div class="video-placeholder bg-dark h-100 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-clapperboard fa-5x text-white-50 opacity-25"></i>
+                                <div class="video-overlay p-4 position-absolute bottom-0 start-0 w-100 bg-gradient-dark text-white">
+                                    <span class="badge bg-danger mb-2">LIVE TRENDING</span>
+                                    <h4>Most Viewed Reel in Last 5 mins</h4>
+                                    <p class="small mb-0">Views: 2.4M | Shares: 150K | Region: Brazil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="glass-card p-4 h-100">
+                            <h5>سرعة الانتشار (Velocity)</h5>
+                            <div style="height: 200px;">
+                                <canvas id="velocityChart"></canvas>
+                            </div>
+                            <hr class="border-secondary">
+                            <h6>أعلى التصنيفات حالياً:</h6>
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between mb-2"><span>#Gaming</span> <b class="text-info">85%</b></li>
+                                <li class="d-flex justify-content-between mb-2"><span>#AI_Art</span> <b class="text-info">72%</b></li>
+                                <li class="d-flex justify-content-between"><span>#Travel</span> <b class="text-info">64%</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>

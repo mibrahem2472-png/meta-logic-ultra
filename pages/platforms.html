@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>تزامن المنصات | Meta Ecosystem</title>
+    <style>
+        /* أنميشن تدفق البيانات */
+        .flow-line { height: 3px; background: linear-gradient(90deg, transparent, #25D366, transparent); background-size: 200% 100%; animation: data-flow 2s linear infinite; }
+        @keyframes data-flow { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+        
+        .ig-glow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(228, 64, 95, 0.1) 0%, transparent 70%); animation: pulse-ig 3s infinite; pointer-events: none; }
+        @keyframes pulse-ig { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
+        
+        .glass-card { position: relative; overflow: hidden; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        .glass-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-dark text-white">
+
+    <div class="d-flex" id="wrapper">
+        <div id="content" class="w-100">
+            <main class="p-4">
+                <h2 class="fw-800 mb-5 text-primary"><i class="fas fa-hubspot me-2"></i> تحليل الشبكات الاجتماعية (Social Engine)</h2>
+                
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 border-bottom border-success border-4 h-100">
+                            <i class="fab fa-whatsapp fa-4x text-success mb-3"></i>
+                            <h4>WhatsApp Global</h4>
+                            <div class="py-3">
+                                <h2 class="fw-800 text-success mb-0" id="wa-counter">2,100,000</h2>
+                                <small class="text-muted">رسالة معالجة / ثانية</small>
+                            </div>
+                            <div class="flow-line mt-2"></div>
+                            <span class="badge bg-success mt-3">Status: Optimal</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 border-bottom border-danger border-4 h-100">
+                            <div class="ig-glow"></div>
+                            <i class="fab fa-instagram fa-4x text-danger mb-3"></i>
+                            <h4>Instagram Deep</h4>
+                            <div class="py-3">
+                                <h2 class="fw-800 text-danger mb-0" id="ig-counter">1,400,000</h2>
+                                <small class="text-muted">تفاعل لحظي (Likes/Reels)</small>
+                            </div>
+                            <div class="progress bg-dark mt-2" style="height: 6px;">
+                                <div class="progress-bar bg-danger progress-bar-animated progress-bar-striped" style="width: 85%"></div>
+                            </div>
+                            <span class="badge bg-danger mt-3">Status: Heavy Load</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="glass-card p-4 border-bottom border-light border-4 h-100">
+                            <i class="fab fa-threads fa-4x text-white mb-3"></i>
+                            <h4>Threads</h4>
+                            <div class="py-3">
+                                <h2 class="fw-800 text-white mb-0">185M</h2>
+                                <small class="text-muted">Active Node Sync</small>
+                            </div>
+                            <div class="mt-2" style="height:3px; background: rgba(255,255,255,0.1)"></div>
+                            <span class="badge bg-warning text-dark mt-3">Syncing...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <a href="../index.html" class="btn btn-outline-primary rounded-pill px-4">
+                        <i class="fas fa-arrow-right ms-2"></i> العودة للنواة المركزية
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // عداد واتساب
+        setInterval(() => {
+            const wa = document.getElementById('wa-counter');
+            if(wa) {
+                let val = parseInt(wa.innerText.replace(/,/g, ''));
+                val += Math.floor(Math.random() * 150);
+                wa.innerText = val.toLocaleString();
+            }
+        }, 1000);
+
+        // عداد إنستجرام
+        setInterval(() => {
+            const ig = document.getElementById('ig-counter');
+            if(ig) {
+                let val = parseInt(ig.innerText.replace(/,/g, ''));
+                val += Math.floor(Math.random() * 80);
+                ig.innerText = val.toLocaleString();
+            }
+        }, 1500);
+    </script>
+</body>
+</html>

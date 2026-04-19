@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Meta Finance | Stock & Revenue</title>
+</head>
+<body class="bg-finance-theme">
+
+    <div class="d-flex" id="wrapper">
+        <div id="content" class="w-100">
+            <main class="p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="fw-800 text-success">META STOCK MARKET</h1>
+                        <p class="text-muted">مراقبة تدفق السيولة وأداء الأسهم اللحظي</p>
+                    </div>
+                    <div class="stock-badge p-3 bg-dark rounded-pill border border-success">
+                        <span class="text-white">META: </span>
+                        <span class="text-success fw-bold" id="stock-price">$485.24</span>
+                        <i class="fas fa-caret-up text-success ms-2"></i>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-xl-9">
+                        <div class="glass-card p-4">
+                            <h5>أداء السهم خلال الـ 24 ساعة الماضية</h5>
+                            <div style="height: 400px;">
+                                <canvas id="stockChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3">
+                        <div class="glass-card p-4 h-100">
+                            <h5>مصادر الدخل</h5>
+                            <div class="revenue-item mt-4">
+                                <small>Facebook Ads</small>
+                                <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 75%"></div></div>
+                                <small>Instagram Shopping</small>
+                                <div class="progress mb-3"><div class="progress-bar bg-danger" style="width: 45%"></div></div>
+                                <small>Reality Labs (VR)</small>
+                                <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 15%"></div></div>
+                            </div>
+                            <div class="mt-5 p-3 rounded bg-success-light text-success text-center">
+                                <h4 class="fw-bold mb-0">+$2.4B</h4>
+                                <small>صافي ربح اليوم</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>

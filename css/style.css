@@ -1,0 +1,352 @@
+/* 1. المتغيرات العالمية - الـ Palette الاحترافي */
+:root {
+    --primary-blue: #0866FF;
+    --neon-cyan: #00f2ff;
+    --dark-navy: #050a18;
+    --sidebar-bg: #0b1120;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --success-glow: #00ff88;
+    --danger-glow: #ff4b4b;
+}
+
+/* 2. أساسيات الصفحة */
+body {
+    background-color: var(--dark-navy);
+    color: var(--text-main);
+    font-family: 'Inter', 'IBM Plex Sans Arabic', sans-serif;
+    overflow-x: hidden;
+    letter-spacing: -0.02em;
+}
+
+/* 3. تنسيق الـ Sidebar (The Command Tower) */
+#sidebar {
+    min-width: 280px;
+    max-width: 280px;
+    background: var(--sidebar-bg);
+    border-left: 1px solid var(--glass-border); /* لأننا شغالين RTL */
+    min-height: 100vh;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-header {
+    border-bottom: 1px solid var(--glass-border);
+    padding: 30px 20px;
+}
+
+.main-logo {
+    filter: drop-shadow(0 0 10px var(--primary-blue));
+    transition: 0.5s;
+}
+
+.main-logo:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* عناوين الأقسام */
+.group-label {
+    color: var(--primary-blue);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 20px 15px 10px 0;
+    opacity: 0.8;
+}
+
+/* روابط القائمة */
+#sidebar ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    margin: 4px 10px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+#sidebar ul li a i {
+    font-size: 1.1rem;
+    margin-left: 15px; /* مسافة للأيقونة في الـ RTL */
+    width: 25px;
+}
+
+#sidebar ul li a:hover, #sidebar ul li.active a {
+    background: linear-gradient(90deg, rgba(8, 102, 255, 0.15) 0%, transparent 100%);
+    color: var(--neon-cyan);
+    box-shadow: inset 3px 0 0 var(--primary-blue);
+}
+
+/* 4. الـ Header العلوي (The Control Bar) */
+.top-header {
+    background: rgba(11, 17, 32, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.search-box input {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: white;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    background: rgba(255,255,255,0.07);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(8, 102, 255, 0.3);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    transition: 0.3s;
+}
+
+.icon-circle:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* 5. الكروت (Glassmorphism Cards) */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.glass-card:hover {
+    border-color: rgba(8, 102, 255, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.stat-card h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(to left, #fff, #94a3b8);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-bg-icon {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    font-size: 5rem;
+    opacity: 0.03;
+    transform: rotate(-15deg);
+}
+
+/* 6. خريطة الـ War Room */
+.map-card {
+    background: radial-gradient(circle at center, #10192d 0%, #050a18 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    height: 400px;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+}
+
+/* 7. أنيميشن النبض (Pulse Effects) */
+.pulse-red {
+    width: 8px;
+    height: 8px;
+    background: var(--danger-glow);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--danger-glow);
+    animation: neon-pulse 1.5s infinite;
+}
+
+@keyframes neon-pulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.4; transform: scale(1); }
+}
+
+/* 8. الجداول الراقية */
+.table {
+    color: var(--text-main);
+}
+
+.log-entry {
+    background: rgba(255,255,255,0.02);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.log-entry:hover {
+    background: rgba(255,255,255,0.05);
+    padding-right: 15px !important;
+}
+
+/* 9. تخصيص الـ Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-navy);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-blue);
+}
+
+/* 10. الـ Chart Styling */
+canvas {
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+}
+/* --- تأثيرات صفحة الـ AI Lab --- */
+.text-neon-blue {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+}
+
+.ai-status-orb {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--neon-cyan);
+    animation: orb-breathe 3s infinite ease-in-out;
+}
+
+@keyframes orb-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; filter: brightness(1.5); }
+}
+
+.server-node {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    background: #1a202c;
+    transition: 0.3s;
+}
+
+.node-online { background: var(--success-glow); box-shadow: 0 0 8px var(--success-glow); }
+.node-busy { background: #ffcc00; box-shadow: 0 0 8px #ffcc00; }
+
+/* --- تأثيرات صفحة الـ Cyber Security --- */
+.radar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 75, 75, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radar-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, rgba(255, 75, 75, 0.4) 0%, transparent 40%);
+    animation: radar-spin 2s linear infinite;
+}
+
+@keyframes radar-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.enc-box {
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--success-glow);
+    border-radius: 4px;
+}
+
+.enc-box.active {
+    background: var(--success-glow);
+    box-shadow: 0 0 10px var(--success-glow);
+    animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+/* أنميشن تتبع الأقمار الصناعية (Satellite Tracker) */
+.satellite-orbit {
+    position: relative;
+    border: 1px dashed rgba(0, 242, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate-orbit 10s linear infinite;
+}
+
+.satellite-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+@keyframes rotate-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* محرك إنستجرام (Instagram Engine Glow) */
+.ig-engine-card {
+    background: linear-gradient(45deg, rgba(228, 64, 95, 0.1), rgba(253, 29, 29, 0.1));
+    border-right: 4px solid #E4405F !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.ig-pulse {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(228, 64, 95, 0.1) 0%, transparent 70%);
+    animation: ig-glow 4s infinite;
+}
+
+@keyframes ig-glow {
+    0%, 100% { transform: scale(0.5); opacity: 0.3; }
+    50% { transform: scale(1); opacity: 0.6; }
+}
+
+/* تدفق الواتساب (WhatsApp Stream) */
+.wa-stream-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #25D366, transparent);
+    background-size: 200% 100%;
+    animation: wa-flow 2s linear infinite;
+}
+
+@keyframes wa-flow {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}

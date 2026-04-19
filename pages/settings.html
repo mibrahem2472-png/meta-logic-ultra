@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings | Meta Logic</title>
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+<div class="d-flex" id="wrapper">
+    <div id="content" class="w-100">
+        <main class="p-4">
+            <div class="header-settings mb-5">
+                <h1 class="fw-800 text-primary"><i class="fas fa-user-gear me-2"></i> إعدادات النظام المتقدمة</h1>
+                <p class="text-muted">تخصيص أداء مصفوفة ميتا والذكاء الاصطناعي</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-6">
+                    <div class="glass-card p-4">
+                        <h5 class="mb-4 text-info"><i class="fas fa-shield-halved me-2"></i> الأمان والخصوصية</h5>
+                        
+                        <div class="form-check form-switch mb-3 d-flex justify-content-between align-items-center">
+                            <label class="form-check-label" for="twoFactor">تفعيل التحقق بخطوتين (Global 2FA)</label>
+                            <input class="form-check-input" type="checkbox" id="twoFactor" checked>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-3 d-flex justify-content-between align-items-center">
+                            <label class="form-check-label" for="encryption">تشفير كوانتوم (Quantum Encryption)</label>
+                            <input class="form-check-input" type="checkbox" id="encryption" checked>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="form-label small text-muted">مستوى بروتوكول الأمان</label>
+                            <select class="form-select bg-dark text-white border-secondary">
+                                <option>Level 1: Standard</option>
+                                <option selected>Level 2: Military Grade</option>
+                                <option>Level 3: Zero Trust</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <div class="glass-card p-4">
+                        <h5 class="mb-4 text-warning"><i class="fas fa-bolt me-2"></i> محرك الأداء والذكاء الاصطناعي</h5>
+                        
+                        <div class="form-check form-switch mb-3 d-flex justify-content-between align-items-center">
+                            <label class="form-check-label" for="llamaBoost">تفعيل وضع Llama 4 Turbo</label>
+                            <input class="form-check-input" type="checkbox" id="llamaBoost" checked>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="form-label small text-muted">توزيع طاقة السيرفرات (Server Allocation)</label>
+                            <input type="range" class="form-range" min="0" max="100" value="85">
+                            <div class="d-flex justify-content-between small">
+                                <span>Economic</span>
+                                <span class="text-primary">Performance: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4 text-end">
+                    <button class="btn btn-outline-secondary px-4 me-2 rounded-pill">إلغاء</button>
+                    <button class="btn btn-primary px-5 rounded-pill shadow">حفظ التغييرات</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="../script/bootstrap.bundle.min.js"></script>
+<script src="../script/script.js"></script>
+</body>
+</html>

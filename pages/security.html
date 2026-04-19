@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Meta Security | Defense Center</title>
+</head>
+<body class="bg-security-theme">
+
+    <div class="d-flex" id="wrapper">
+        <div id="content" class="w-100">
+            <main class="p-4">
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h2 class="fw-800 text-danger"><i class="fas fa-shield-virus"></i> Cyber Defense Command</h2>
+                    <span class="badge bg-outline-danger border border-danger p-2">Threat Level: MODERATE</span>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-xl-4">
+                        <div class="glass-card p-4 text-center">
+                            <h5 class="text-start">رادار الاختراق النشط</h5>
+                            <div class="radar-container my-5">
+                                <div class="radar-circle"></div> <i class="fas fa-user-secret fa-3x text-danger opacity-50"></i>
+                            </div>
+                            <p class="text-danger small">14 محاولة اختراق تم صدها في آخر 60 ثانية</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-8">
+                        <div class="glass-card p-4">
+                            <h5>سجل الهجمات (Intrusion Detection System)</h5>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-dark table-hover border-0">
+                                    <thead>
+                                        <tr>
+                                            <th>المصدر (IP)</th>
+                                            <th>النوع</th>
+                                            <th>المستهدف</th>
+                                            <th>الحالة</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="attack-logs">
+                                        <tr>
+                                            <td class="text-danger font-monospace">192.168.0.XX</td>
+                                            <td>Brute Force</td>
+                                            <td>Meta Accounts</td>
+                                            <td><span class="badge bg-success">Blocked</span></td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 g-4">
+                    <div class="col-xl-12">
+                        <div class="glass-card p-4 bg-dark">
+                            <h5 class="text-success"><i class="fas fa-lock"></i> حالة تشفير البيانات (Quantum Encryption)</h5>
+                            <div class="encryption-grid d-flex flex-wrap gap-2 mt-3">
+                                <div class="enc-box active"></div>
+                                <div class="enc-box active"></div>
+                                <div class="enc-box updating"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../script/bootstrap.bundle.min.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>

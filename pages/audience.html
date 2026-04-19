@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Audience Insights | Meta Logic</title>
+</head>
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div id="content" class="w-100">
+            <main class="p-4">
+                <h2 class="fw-800 mb-5"><i class="fas fa-users-viewfinder text-primary me-2"></i> رادار الجمهور العالمي</h2>
+
+                <div class="row g-4">
+                    <div class="col-xl-7">
+                        <div class="glass-card p-4">
+                            <h5>أكثر المناطق نشاطاً الآن (Global Hotspots)</h5>
+                            <div class="heatmap-container rounded mt-3 d-flex align-items-center justify-content-center" style="height: 300px; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');">
+                                <div class="pulse-ring"></div>
+                                <span class="badge bg-primary">Asia-Pacific: High</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5">
+                        <div class="glass-card p-4">
+                            <h5>توزيع الفئات العمرية</h5>
+                            <canvas id="ageChart" style="height: 300px;"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12">
+                        <div class="glass-card p-4">
+                            <h5>المواضيع الأكثر تداولاً (Real-time Topics)</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3" id="trending-topics">
+                                <span class="badge rounded-pill bg-primary p-2">#Metaverse</span>
+                                <span class="badge rounded-pill bg-dark border border-secondary p-2">#Llama4_Launch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>
